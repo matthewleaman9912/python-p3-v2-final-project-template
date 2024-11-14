@@ -1,11 +1,8 @@
-#!/usr/bin/env python3
-# lib/debug.py
 
 from models.categories import Categories
 from models.movies import Movies
-import ipdb
 
-def reset_database():
+def seed_database():
     Categories.drop_table()
     Movies.drop_table()
     Categories.create_table()
@@ -33,6 +30,5 @@ def reset_database():
     Movies.create("The Idea of You", 115, "Anne Hathaway", romance.id)
     Movies.create("50 First Dates", 106, "Adam Sandler", romance.id)
 
-reset_database()
-
-ipdb.set_trace()
+seed_database()
+print("Seeded database")
